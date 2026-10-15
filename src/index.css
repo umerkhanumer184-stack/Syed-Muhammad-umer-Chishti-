@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #0a0d14;
+    --neon-green: #00ff88;
+    --neon-green-glow: rgba(0, 255, 136, 0.25);
+    --gold: #fbbf24;
+    --gold-glow: rgba(251, 191, 36, 0.2);
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #0a0d14;
+    color: #e2e8f0;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .font-mono-code {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Glassmorphism primitives */
+.glass-panel {
+  background: rgba(13, 19, 32, 0.68);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-panel-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(18, 26, 44, 0.82);
+  border-color: rgba(0, 255, 136, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(0, 255, 136, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Neon Glow Accents */
+.neon-glow-box {
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.18), inset 0 0 15px rgba(0, 255, 136, 0.05);
+}
+
+.neon-glow-text {
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+.gold-glow-text {
+  text-shadow: 0 0 15px rgba(251, 191, 36, 0.4);
+}
+
+/* Keyframe Animations */
+@keyframes viewFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseNeon {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes radarSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scanlineSweep {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(1000%);
+  }
+}
+
+.animate-view-in {
+  animation: viewFadeIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-neon {
+  animation: pulseNeon 4s ease-in-out infinite;
+}
+
+.animate-radar {
+  animation: radarSpin 14s linear infinite;
+}
+
+/* Cyber grid lines background pattern */
+.bg-cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.bg-radial-vignette {
+  background: radial-gradient(circle at 50% 20%, rgba(0, 255, 136, 0.07) 0%, transparent 60%),
+              radial-gradient(circle at 85% 60%, rgba(245, 158, 11, 0.04) 0%, transparent 50%),
+              #0a0d14;
+}
