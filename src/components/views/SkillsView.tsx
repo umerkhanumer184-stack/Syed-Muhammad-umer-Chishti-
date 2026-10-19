@@ -169,7 +169,7 @@ export const SkillsView: React.FC<SkillsViewProps> = ({ onNavigate }) => {
           return (
             <div
               key={skill.id}
-              className="glass-panel glass-panel-hover rounded-2xl p-6 border border-white/[0.08] relative group flex flex-col justify-between"
+              className="glass-panel rounded-2xl p-6 border border-white/[0.08] relative group flex flex-col justify-between transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 hover:border-[#10B981]/50 hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.3),0_0_20px_rgba(16,185,129,0.2)]"
             >
               <div>
                 {/* Top Header */}

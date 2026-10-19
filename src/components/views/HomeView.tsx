@@ -102,25 +102,29 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
           {/* Right Column: Avatar Container with Glowing Neon Borders */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="relative group w-full max-w-[340px] sm:max-w-[380px]">
-              {/* Outer Neon Glow Rings */}
-              <div className="absolute -inset-1.5 bg-gradient-to-tr from-[#00ff88] via-emerald-600 to-[#fbbf24] rounded-3xl blur-lg opacity-40 group-hover:opacity-75 transition duration-500" />
+              {/* Outer Neon Glow Rings with pulse glow animation */}
+              <div className="absolute -inset-1.5 bg-gradient-to-tr from-[#10B981] via-emerald-500 to-[#fbbf24] rounded-3xl blur-lg opacity-40 group-hover:opacity-80 transition duration-500 animate-pulse-neon" />
               
-              {/* Glass Frame Container */}
-              <div className="relative rounded-2xl p-2 bg-[#0d1320] border-2 border-[#00ff88]/50 shadow-[0_0_30px_rgba(0,255,136,0.25)] overflow-hidden">
+              {/* Glass Frame Container with crisp rounded glassmorphic #10B981 border */}
+              <div className="relative rounded-2xl p-2 bg-[#0d1320]/90 backdrop-blur-xl border-2 border-[#10B981] shadow-[0_0_30px_rgba(16,185,129,0.35)] overflow-hidden transition-all duration-300 group-hover:shadow-[0_0_40px_rgba(16,185,129,0.5)]">
                 {/* Visual Avatar */}
                 <div className="relative aspect-square rounded-xl overflow-hidden bg-slate-900">
                   <img
-                    src="/src/assets/images/avatar_umer_chishti_1792071197982.jpg"
+                    src="./umer1.jpg"
                     alt="Syed Muhammad Umer Chishti - Founder & Lead Architect at SU Digital"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    onError={(e) => {
+                      // Fallback to internal asset if needed
+                      e.currentTarget.src = "/src/assets/images/avatar_umer_chishti_1792071197982.jpg";
+                    }}
                   />
                   {/* Bottom Vignette Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0d14] via-transparent to-transparent opacity-80" />
 
                   {/* Corner cyber accent brackets */}
-                  <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-[#00ff88]" />
-                  <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-[#00ff88]" />
+                  <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-[#10B981]" />
+                  <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-[#10B981]" />
                   <div className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-[#fbbf24]" />
                   <div className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-[#fbbf24]" />
 
@@ -128,9 +132,9 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
                   <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-[#0a0f1d]/90 backdrop-blur-md border border-white/10 flex items-center justify-between">
                     <div>
                       <p className="text-xs font-bold text-white font-display">Syed Muhammad Umer Chishti</p>
-                      <p className="text-[11px] text-[#00ff88] font-mono-code">SU Digital · Founder</p>
+                      <p className="text-[11px] text-[#10B981] font-mono-code font-semibold">SU Digital · Founder</p>
                     </div>
-                    <div className="w-8 h-8 rounded-lg bg-[#00ff88]/10 border border-[#00ff88]/30 flex items-center justify-center text-[#00ff88]">
+                    <div className="w-8 h-8 rounded-lg bg-[#10B981]/15 border border-[#10B981]/30 flex items-center justify-center text-[#10B981]">
                       <Terminal className="w-4 h-4" />
                     </div>
                   </div>

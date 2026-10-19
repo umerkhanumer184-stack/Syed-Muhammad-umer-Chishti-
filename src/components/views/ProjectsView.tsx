@@ -50,6 +50,9 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({ onNavigate }) => {
       imageUrl: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800',
       techStack: ['React 19', 'Tailwind CSS', 'WebSockets', 'Canvas API', 'TypeScript'],
       metrics: '40k+ Active Match Telemetry · 60 FPS Canvas',
+      liveUrls: [
+        { label: 'Live Demo ↗', url: 'https://umar-esports-portal.netlify.app' },
+      ],
       caseStudy: {
         problem: 'Competitive tournaments require instant bracket re-indexing and sub-100ms real-time chat sync without tearing or UI latency.',
         architecture: 'Decoupled WebSocket state managers with canvas-accelerated bracket trees and localized DOM updates.',
@@ -66,6 +69,9 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({ onNavigate }) => {
       imageUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800',
       techStack: ['React', 'TypeScript', 'Tailwind v4', 'Netlify Edge', 'Vite'],
       metrics: '100/100 Lighthouse Performance · 0.00 CLS',
+      liveUrls: [
+        { label: 'Live Demo ↗', url: 'https://umar-agency-demo.netlify.app' },
+      ],
       caseStudy: {
         problem: 'Agency sites often suffer from bloated asset bundles, sluggish view transitions, and uninspired cookie-cutter aesthetics.',
         architecture: 'Client-side SPA state machine with instant view swapping, fluid typography scales, and hardware-accelerated CSS keyframe transforms.',
@@ -83,8 +89,8 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({ onNavigate }) => {
       techStack: ['HTML5', 'CSS3', 'JavaScript ES6+', 'Netlify Deploy', 'Tailwind'],
       metrics: 'Dual Global Deployments · Instant Menu Filter',
       liveUrls: [
-        { label: 'Qatar Live Demo', url: 'https://qatar-su-digital.netlify.app' },
-        { label: 'Tarteeb Restaurant Demo', url: 'https://tarteeb-restaurant.netlify.app' },
+        { label: 'Qatar Live Demo ↗', url: 'https://qatar-su-digital.netlify.app' },
+        { label: 'Tarteeb Restaurant Demo ↗', url: 'https://tarteeb-restaurant.netlify.app' },
       ],
       caseStudy: {
         problem: 'Traditional restaurant platforms rely on heavy third-party PDF menus that cause high bounce rates and zero mobile ordering convenience.',
@@ -102,6 +108,9 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({ onNavigate }) => {
       imageUrl: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=800',
       techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Stripe API', 'State Machines'],
       metrics: '+38% Cart Conversion · <120ms Search Latency',
+      liveUrls: [
+        { label: 'Live Demo ↗', url: 'https://su-digital-store.netlify.app' },
+      ],
       caseStudy: {
         problem: 'Monolithic storefronts suffer from 3-4 second page loads during product browsing, leading to high cart abandonment rates.',
         architecture: 'Optimistic client-side cart synchronization, edge-cached product catalogs, and zero-roundtrip filter computations.',
@@ -150,6 +159,9 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({ onNavigate }) => {
       imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800',
       techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Calendar Engine', 'Form Validation'],
       metrics: 'Zero Booking Conflicts · 99.9% Reliable Forms',
+      liveUrls: [
+        { label: 'Live Demo ↗', url: 'https://dr-saif-portfolio.netlify.app' },
+      ],
       caseStudy: {
         problem: 'Patients frequently encounter confusing booking steps, double-booked slots, and non-accessible medical portals on mobile devices.',
         architecture: 'Strict calendar time-slot validation state machine with automated time-zone normalization and accessible screen reader support.',
@@ -166,6 +178,9 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({ onNavigate }) => {
       imageUrl: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800',
       techStack: ['HTML5', 'Tailwind CSS', 'JavaScript ES6+', 'Netlify', 'Quote Engine'],
       metrics: '+55% Inbound B2B RFP Volume',
+      liveUrls: [
+        { label: 'Live Demo ↗', url: 'https://cleaning-su-agency.netlify.app' },
+      ],
       caseStudy: {
         problem: 'Corporate facility managers demand instant budget estimates rather than waiting 48 hours for manual sales quote emails.',
         architecture: 'Client-side dynamic price calculation engine that computes commercial square footage rates and produces immediate PDF-ready estimates.',
@@ -198,7 +213,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({ onNavigate }) => {
         {projects.map((proj) => (
           <div
             key={proj.id}
-            className="glass-panel glass-panel-hover rounded-2xl border border-white/[0.08] relative group overflow-hidden flex flex-col justify-between"
+            className="glass-panel rounded-2xl border border-white/[0.08] relative group overflow-hidden flex flex-col justify-between transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 hover:border-[#10B981]/50 hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.3),0_0_20px_rgba(16,185,129,0.2)]"
           >
             <div>
               {/* TOP PREVIEW HEADER: High-resolution direct image with gradient scrim and glowing border */}
@@ -272,23 +287,23 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({ onNavigate }) => {
                   ))}
                 </div>
 
-                {/* Direct Live Links (Specifically highlighted for Restaurant Web App) */}
+                {/* Direct Live Links */}
                 {proj.liveUrls && (
                   <div className="pt-2 space-y-2">
-                    <div className="text-[11px] font-mono-code text-[#00ff88] uppercase tracking-wider">
+                    <div className="text-[11px] font-mono-code text-[#10B981] uppercase tracking-wider font-semibold">
                       Live Production Deployments:
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                       {proj.liveUrls.map((link, idx) => (
                         <a
                           key={idx}
                           href={link.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="px-3 py-2 rounded-lg bg-[#00ff88]/10 hover:bg-[#00ff88]/20 border border-[#00ff88]/30 text-xs font-mono-code text-[#00ff88] flex items-center justify-between transition-colors group/link"
+                          className="px-4 py-2.5 rounded-xl bg-[#10B981]/15 hover:bg-[#10B981]/25 border-2 border-[#10B981] text-xs font-mono-code font-bold text-[#10B981] shadow-[0_0_15px_rgba(16,185,129,0.25)] hover:shadow-[0_0_25px_rgba(16,185,129,0.45)] transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-0.5 flex items-center justify-between group/link cursor-pointer"
                         >
                           <span className="truncate">{link.label}</span>
-                          <ExternalLink className="w-3 h-3 shrink-0 ml-1 group-hover/link:translate-x-0.5" />
+                          <ExternalLink className="w-3.5 h-3.5 shrink-0 ml-1 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
                         </a>
                       ))}
                     </div>
@@ -387,18 +402,17 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({ onNavigate }) => {
             {/* Direct live links if available */}
             {selectedProject.liveUrls && (
               <div className="space-y-2 pt-2">
-                <div className="text-xs font-mono-code text-[#00ff88] uppercase">Explore Live Production URLs:</div>
-                <div className="flex flex-wrap gap-2">
+                <div className="text-xs font-mono-code text-[#10B981] uppercase font-semibold">Explore Live Production URLs:</div>
+                <div className="flex flex-wrap gap-2.5">
                   {selectedProject.liveUrls.map((link, idx) => (
                     <a
                       key={idx}
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 rounded-lg bg-[#00ff88]/15 hover:bg-[#00ff88]/25 border border-[#00ff88]/40 text-xs font-mono-code text-[#00ff88] flex items-center gap-2 transition-colors"
+                      className="px-4 py-2.5 rounded-xl bg-[#10B981]/15 hover:bg-[#10B981]/25 border-2 border-[#10B981] text-xs font-mono-code font-bold text-[#10B981] shadow-[0_0_15px_rgba(16,185,129,0.25)] hover:shadow-[0_0_25px_rgba(16,185,129,0.45)] transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer"
                     >
                       <span>{link.label}</span>
-                      <ExternalLink className="w-3.5 h-3.5" />
                     </a>
                   ))}
                 </div>

@@ -28,8 +28,8 @@ export const ContactView: React.FC = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const officialEmail = 'syedumer.digital@gmail.com';
-  // WhatsApp local access link (+92 Pakistan country code)
-  const whatsappUrl = 'https://wa.me/923000000000?text=Hello%20Syed%20Muhammad%20Umer%20Chishti%2C%20I%20would%20like%20to%20discuss%20a%20project%20with%20SU%20Digital.';
+  // WhatsApp local access link (+92 314 1114626)
+  const whatsappUrl = 'https://wa.me/923141114626?text=Hello%20Syed%20Muhammad%20Umer%2C%20I%20reached%20out%20through%20SU%20Digital%20Portfolio.';
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(officialEmail);
@@ -129,7 +129,7 @@ export const ContactView: React.FC = () => {
               WhatsApp Direct Channel
             </h3>
             <p className="text-base font-bold font-display text-white mt-1">
-              +92 Local &amp; International Access
+              +92 314 1114626
             </p>
             <p className="text-xs text-slate-300 mt-1 leading-relaxed">
               Fast-track response for urgent architectural audits, consultation schedules, or live proposal requests.
@@ -139,10 +139,10 @@ export const ContactView: React.FC = () => {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-[#0a0d14] text-xs font-mono-code font-bold uppercase transition-all shadow-[0_0_15px_rgba(16,185,129,0.3)] flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-2.5 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-[#0a0d14] text-xs font-mono-code font-bold uppercase transition-all shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:scale-105 flex items-center justify-center gap-2 cursor-pointer"
               >
                 <MessageSquare className="w-4 h-4 fill-[#0a0d14]" />
-                <span>Chat on WhatsApp (+92)</span>
+                <span>CHAT ON WHATSAPP (+92 314 1114626)</span>
               </a>
             </div>
           </div>

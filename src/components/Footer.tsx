@@ -47,9 +47,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
     },
     {
       name: 'WhatsApp',
-      url: 'https://wa.me/923000000000?text=Hello%20Syed%20Muhammad%20Umer%20Chishti%2C%20I%20would%20like%20to%20discuss%20a%20project%20with%20SU%20Digital.',
-      badge: '+92 DIRECT',
-      color: 'hover:border-[#00ff88] hover:text-[#00ff88]',
+      url: 'https://wa.me/923141114626?text=Hello%20Syed%20Muhammad%20Umer%2C%20I%20reached%20out%20through%20SU%20Digital%20Portfolio.',
+      badge: '+92 314 1114626',
+      color: 'hover:border-[#10B981] hover:text-[#10B981]',
     },
   ];
 

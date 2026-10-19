@@ -44,9 +44,9 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate }) => {
     {
       index: '03',
       title: 'Design System Mathematical Rigor',
-      category: 'UI/UX Aesthetics',
-      description: 'Bridging high-fashion cyber aesthetics with mathematical spatial harmony: fluid clamp typography, harmonious 60-30-10 color budgeting, and physically accurate glassmorphism.',
-      deliverables: ['Fluid Typographic Curves', 'Cyber Dark Glass Geometry', 'Tactile Micro-Interactions'],
+      category: 'UI/UX Aesthetics & Double Diamond',
+      description: 'Bridging high-fashion cyber aesthetics with mathematical spatial harmony and the Double Diamond Design Process (Discover, Define, Develop, Deliver) to emphasize elite user research and zero-defect architecture.',
+      deliverables: ['Double Diamond Process (Discover, Define, Develop, Deliver)', 'Elite User Research & Spatial Harmony', 'Cyber Dark Glass Geometry & Micro-Interactions'],
       accentColor: 'text-emerald-400',
       borderColor: 'border-emerald-400/30',
     },

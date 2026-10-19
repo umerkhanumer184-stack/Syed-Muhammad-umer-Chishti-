@@ -30,6 +30,7 @@ interface ServiceItem {
   accentColor: string;
   badgeBg: string;
   badgeBorder: string;
+  methodologyBadge?: string;
   features: string[];
   techStack: string[];
   idealFor: string;
@@ -82,16 +83,18 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onNavigate }) => {
       id: 'glassmorphism-ui-ux',
       title: 'Glassmorphism UI/UX Design',
       tagline: 'Futuristic cyber aesthetics with mathematical spatial harmony',
-      description: 'Next-generation visual systems combining frosted glassmorphism cards, glowing neon vector accents, and tactile responsive ergonomics. Crafted to captivate users while maintaining strict WCAG AA contrast, optical compensation, and zero cognitive clutter.',
+      methodologyBadge: 'Double Diamond Design Process (Discover, Define, Develop, Deliver)',
+      description: 'Next-generation visual systems combining frosted glassmorphism cards, glowing neon vector accents, and tactile responsive ergonomics. Driven by the Double Diamond Design Process (Discover, Define, Develop, Deliver) to emphasize elite user research and zero-defect architecture.',
       icon: Layers,
       accentColor: 'text-emerald-400',
       badgeBg: 'bg-emerald-400/10',
       badgeBorder: 'border-emerald-400/30',
       features: [
+        'Double Diamond Design Process (Discover, Define, Develop, Deliver)',
+        'Elite User Research, User Journeys & Cognitive Flow Modeling',
         'Multi-Layered Frosted Glass & Backdrop Filter Blur',
         'Cohesive Neon Vector & Gold Shimmer Accents',
         'Micro-Interactions with 120ms Settling Physics',
-        'Full Dark-Theme Architecture (#0a0d14 Canvas)',
       ],
       techStack: ['Tailwind CSS v4', 'Figma', 'CSS Keyframes', 'SVG Vectors'],
       idealFor: 'High-end tech brands, luxury digital agencies, Web3 leaders, and luxury portfolios.',
@@ -144,7 +147,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onNavigate }) => {
           return (
             <div
               key={service.id}
-              className="glass-panel glass-panel-hover rounded-2xl p-7 sm:p-8 border border-white/[0.08] relative group flex flex-col justify-between"
+              className="glass-panel rounded-2xl p-7 sm:p-8 border border-white/[0.08] relative group flex flex-col justify-between transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 hover:border-[#10B981]/50 hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.3),0_0_20px_rgba(16,185,129,0.2)]"
             >
               <div>
                 {/* Header Row */}
@@ -161,6 +164,15 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onNavigate }) => {
                 <h3 className="text-xl font-bold font-display text-white mb-2 group-hover:text-white transition-colors">
                   {service.title}
                 </h3>
+                
+                {/* Sleek Methodology Badge */}
+                {service.methodologyBadge && (
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/35 text-[11px] font-mono-code text-emerald-300 font-semibold shadow-[0_0_12px_rgba(16,185,129,0.2)] mb-3">
+                    <Sparkles className="w-3.5 h-3.5 text-[#00ff88] shrink-0" />
+                    <span>{service.methodologyBadge}</span>
+                  </div>
+                )}
+
                 <p className={`text-xs font-mono-code ${service.accentColor} mb-4`}>
                   {service.tagline}
                 </p>
